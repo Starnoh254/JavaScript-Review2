@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Classes-->
+    <script>
+        // we do classes 
+        // a class is like an object template , container of an object 
+        class Fish{
+            // put a constructor 
+            constructor(name,age){
+                this.fish_name = name
+                this.fish_age = age
+            }
+            // Behaviors / functions here 
+            static  weight = "35 kg"
+
+            swim(){
+                return "<br>" + this.fish_name + " can swim fast " + Fish.weight
+            }
+
+
+            jump(){
+                document.write(" <br> Fish is jumping")
+            }
+        }
+
+        // Inheritance , one class inherits the properties and functions of another class super class
+        // Tilapia is Fish
+        class Tilapia extends Fish {
+            constructor(name,age){
+                super(name,age)
+            }
+
+            run(){
+                document.write("Its running , its " + this.fish_age)
+            }
+        }
+
+        var object = new Fish("Tilapia",2)
+        document.write(object.swim())
+
+        object.jump()
+
+        // var object2 = new Tilapia("Tilapia",6)
+        // object2.jump()
+        // document.write(object2.swim())
+        // object2.run()
+
+    </script>
+</body>
+</html>

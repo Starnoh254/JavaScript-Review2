@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       hello = function (name) {
+        console.log(`Hello ${name}`)
+        
+       }
+       hello("Jane")
+
+       hi = (name) => {
+        console.log('Hi '+name);
+       }
+       hi("John");
+
+       palindrome = (string) => {
+           name = name.toLowerCase()
+           var reverse_name = name.split("").reverse().join("")
+
+
+           if (name == reverse_name) {
+               return ("<br>The name " + name + " is a palindrome")
+           }
+           else {
+               return ("<br>The word " + name + " is not a palindrome")
+           }
+       }
+
+       palindrome("radar")
+
+
+
+    </script>
+</body>
+</html>

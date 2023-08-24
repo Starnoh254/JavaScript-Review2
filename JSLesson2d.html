@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Functions 
+        function myFunction (name,age){
+            document.write("Hello " + name + "!!<br>")
+            document.write("You are " + age + " years")
+        }
+        myFunction("Tom",15)
+
+        //==========================================================
+
+        function bmi (weight , height){
+            var answer = weight/ (height* height)
+            if ((answer >= 24 && answer <= 36)){
+                return ("Overweight")
+            }
+            else if (answer > 20 && answer < 24){
+                return ("Normal Weight ")
+            }
+            else {
+                return ("UnderWeight")
+            }
+
+        }
+
+        var value_returned = bmi(70,1.75)
+        document.write("<br>" + value_returned)
+
+        // create a function that check if a string  is a palindrome or not 
+        function checkPalindrome (name){
+
+            name = name.toLowerCase()
+            var reverse_name = name.split("").reverse().join("")
+            
+
+           if (name ==  reverse_name){
+            return ("<br>The name " + name + " is a palindrome")
+           }
+           else{
+            return ("<br>The word " + name + " is not a palindrome")
+           }
+        }
+
+        var value = checkPalindrome("Matttdam")
+        document.write(value)
+
+
+    </script>
+</body>
+</html>

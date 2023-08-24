@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name
+    this.holders_accno = accno
+    this.balance = balance
+    this.branch = branch
+    this.status="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Charges {
+            transaction_charge(){
+                return 30
+            }
+        }
+
+        class Account extends Charges{
+            constructor(name,accno,balance,branch,status){
+                super()
+                this.holders_name = name
+                this.holders_accno = accno
+                this.holders_balance = balance
+                this.holders_branch = branch
+                this.holders_status = status
+            }
+
+            Deposit(deposit_amount){
+
+                var converted_deposit_amount = parseFloat(deposit_amount)
+                if(converted_deposit_amount > this.transaction_charge()){
+                    var to_deposit = converted_deposit_amount - this.transaction_charge()
+                    this.holders_balance += to_deposit
+                    document.write("<br>Deposit charges are KES " + this.transaction_charge())
+                    document.write("<br>You have successfully deposited KES " + to_deposit)
+                    document.write("<br> Your balance is KES " + this.holders_balance)
+                }
+                else {
+                    document.write("Failed to deposit! You must have a transaction fee of " + this.transaction_charge())
+                }
+                
+            }
+        }
+
+        var object = new Account("Bob","100455",0,"Tom Mboya","active")
+        object.Deposit(prompt("Enter your deposit amount "))
+    </script>
+</body>
+</html>

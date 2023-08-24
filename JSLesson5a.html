@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--JS ES6-->
+    <script>
+        // Whats new ?
+        // Creation of objects and classes
+        // Constants is defined using const
+        // Rules of Blocked Scope  = let , const
+        // Arrow functions ->  
+        // Template literals
+        // parameter of rest - functions can have n parameters
+
+        // Constants
+        const PI = Math.PI
+        console.log(PI)
+
+        // Re assign 
+        // PI = 5
+        // console.log(PI)
+
+        //let cannot be redeclared
+        let age = 40  
+
+        // let age = 70 , this will cause an error 
+
+        // blocked scope 
+        if(true){
+            var x = "Hello"
+            // inside local scope 
+            console.log(`Tell John ${x}`)
+        }
+
+        // outside scope 
+        console.log(`Tell Jane ${x}`)
+    </script>
+</body>
+</html>

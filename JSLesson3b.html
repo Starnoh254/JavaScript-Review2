@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Objects has states and behavioirs
+            // States / Properties = i.e color, height , width , age , size,
+            // Behaviors / Functions = move(), writing(), calculating()
+            // 3 ways to create objects 
+            // 1.Constructor, 2.Classes , 3. Object data type
+            // method 3 
+            var car = {
+                make: "Toyota",
+                model:"Corolla",
+                year : '2017',
+                cost: "500000",
+                reg: "KDF445G",
+                fullName: function(){
+                    return this.make + this.model
+                },
+                move: function(){
+                    document.write("The " + this.make +  " is moving at high speed <br>")
+                    document.write("The cost of this car is KSH " + this.cost)
+
+                }
+
+
+            }
+
+            console.log(car);
+            document.write(car)
+            document.write("<br>")
+            document.write(car.make)
+            document.write("<br>")
+            document.write(car["cost"])
+            document.write("<hr>");
+            document.write(car.fullName())
+            document.write("<hr>");
+            document.write(car.move())
+
+    </script>
+    
+</body>
+</html>

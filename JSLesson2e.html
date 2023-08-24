@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="name" placeholder="Enter a name ">
+        <br>
+        <button type="button" onclick="checkPalindrome()">Check</button>
+        <div id = "solution" style = "padding: 10px; background-color: cornflowerblue;">
+
+        </div>
+    </form>
+
+    <script>
+          // create a function that check if a string  is a palindrome or not 
+            function checkPalindrome() {
+                var name = document.getElementById("name").value;
+                name = name.toLowerCase()
+                var reverse_name = name.split("").reverse().join("")
+
+
+                if (name == reverse_name) {
+                    document.getElementById("solution").innerHTML = "<h2> Palindrome <h2>"
+                }
+                else {
+                    document.getElementById("solution").innerHTML = "<h2> Not a palindrome <h2>"
+                }
+            }
+
+    </script>
+</body>
+</html>

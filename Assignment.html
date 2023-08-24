@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body
+    style="padding: 0px; margin: 0px;background-image: url(hotel.jpeg);background-size: cover;background-repeat: no-repeat;background-color: rgba(black, black, black, 1);">
+    <div style="padding: 20px;">
+        <h1 style="color: white;">Price Application Form</h1>
+        <form>
+            <input type="number" placeholder="Enter your age " id="age"><br />
+            <br /><br />
+            <button onclick="calculate(event)" style="color: green;">Check the amount to be paid</button><br /><br />
+        </form>
+
+        <h1 id="answer" style="font-size: 50px;"></h1>
+
+    </div>
+
+    <script>
+        function calculate(event) {
+            event.preventDefault();
+            var input = parseFloat(document.getElementById("age").value);
+            if (!isNaN(input)) {
+                if (input < 8) {
+                    var amount = 10 - (10 * 0.05);
+                    var answer = document.getElementById("answer")
+                    answer.innerHTML = "You will pay " + amount + " USD";
+
+                }
+                else if (input > 65) {
+                    var amount = 10 - (10 * 0.1)
+                    var answer = document.getElementById("answer")
+                    answer.innerHTML = "You will pay " + amount + " USD";
+                }
+                else {
+                    var amount = 10
+                    var answer = document.getElementById("answer")
+                    answer.innerHTML = "You will pay " + amount + " USD";
+                }
+            }
+            else {
+                var answer = document.getElementById("answer")
+                answer.innerHTML = "Please enter a valid number!";
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

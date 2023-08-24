@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Image Interactivity</h1>
+    <img src="picturesfolder/R.png" alt="" width="50px" id="img" onmouseenter="change()" onmouseleave="change()">
+    <button type="button" style="background-color: crimson; padding: 10px;" id="switch"
+        onclick="change()">switch</button>
+    <script>
+        function change() {
+            var img = document.getElementById("img");
+            if (img.src.match("R")) {
+                img.src = "picturesfolder/R1.png";
+            }
+            else {
+                img.src = "picturesfolder/image2.jpeg";
+            }
+
+        }
+    </script>
+</body>
+
+</html>

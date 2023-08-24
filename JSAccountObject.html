@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Constructor 
+        function Account(name , account_no , balance , branch , status){
+            this.holders_name = name 
+            this.holders_account_no = account_no
+            this.holders_balance = balance
+            this.holders_branch = branch
+            this.holders_status = status
+
+            // behaviors = Deposit , checkBalance , withdraw , buyAirtime , takeLoans 
+
+            this.deposit = function (deposit_amount){
+                var converted_deposit_amount = parseFloat(deposit_amount)
+                // Conditions 
+                if(converted_deposit_amount <= 0 || converted_deposit_amount >= 500000){
+                    document.write("Please deposit an amount greater than zero  and less than 500000")
+                }
+                else if (this.holders_status == "inactive"){
+                    document.write("Your Account is Inactive")
+                }
+                else{
+                    this.holders_balance = this.holders_balance + converted_deposit_amount
+                    document.write(`You have successfully deposited  KES ${converted_deposit_amount} <br>`)
+                    document.write("You Current Balance is "  + this.holders_balance)
+                    document.write(" Thank You.")
+                }
+
+                
+            }
+
+
+            this.withdraw = function (withdrawal_amount) {
+                var converted_withdrawl_amount = parseInt(withdrawal_amount);
+                if (converted_withdrawl_amount > this.holders_balance) {
+                    document.write("Insufficient funds , your account balance is KES " + this.holders_balance)
+                }
+                else if (this.holders_status == "inactive") {
+                    document.write("Your Account Is inactive");
+
+                }
+                else if (converted_withdrawl_amount == 0) {
+                    document.write("Your withdrawal amount is 0 ")
+                }
+
+                else if ((converted_withdrawl_amount != this.holders_balance) && (this.holders_balance - converted_withdrawl_amount >= 30)) {
+                    this.holders_balance -= converted_withdrawl_amount;
+                    document.write(`You have successfully withdrawn  KES ${converted_withdrawl_amount} <br>`)
+                    document.write("You Current Balance is " + this.holders_balance)
+                    document.write(" Thank You.")
+                }
+                else {
+                    var amount = this.holders_balance - 30
+                    document.write("Invalid withdrawal amount, your maximum withdrawal amount is " + amount)
+                }
+
+            }
+        }
+
+        var account_holder = new Account ("John", "3000790", 7500 , "Tom Mboya Street" , "active")
+        //account_holder.deposit(prompt("Enter your deposit amount "))
+        account_holder.withdraw(prompt("Enter your withdraw amount "))
+
+    </script>
+</body>
+</html>

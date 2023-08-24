@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!--Create objects using a constructor -->
+    <script>
+        // Constructor - It creates the states / properties
+        function Person(name , age , county , contributed){
+                // Create another set of variables belonging to this object 
+                // Link them with above params
+                this.person_name = name
+                this.person_age = age 
+                this.person_county = county
+                this.amount_contributed = contributed
+                this.fullDetails = function (){
+                    return this.person_name + " is " + this.person_age + " years "
+                }
+                this.singing = function (){
+                    document.write( "<br>" + this.person_name + " is singing")
+                }
+        }
+
+        var object = new Person("Jane",25,"Nairobi",1000)
+        document.write(object.fullDetails())
+        object.singing()
+
+        // Object , Classes , Inheritance , Polymorphism , Abstraction , Encapsultation
+    </script>
+
+
+
+
+</body>
+</html>
